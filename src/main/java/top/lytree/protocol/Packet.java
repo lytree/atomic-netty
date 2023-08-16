@@ -2,6 +2,7 @@ package top.lytree.protocol;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import top.lytree.protocol.command.Command;
 
 /**
@@ -11,6 +12,7 @@ import top.lytree.protocol.command.Command;
  * @since 2023-03-26 20:16:22
  */
 @Data
+@NoArgsConstructor
 public abstract class Packet {
 
     /**
