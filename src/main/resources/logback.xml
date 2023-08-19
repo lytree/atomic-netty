@@ -9,7 +9,7 @@
     <!--  <jmxConfigurator/>-->
     <!-- 定义日志文件 输出位置 -->
 
-    <property name="log.path" value="${catalina.base}/logs/"/>
+    <property name="log.path" value="logs/"/>
     <!-- 日志最大的历史 30天 -->
     <property name="maxHistory" value="30"/>
     <!-- 设置日志输出格式 -->
