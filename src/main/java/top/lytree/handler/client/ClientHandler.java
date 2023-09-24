@@ -1,5 +1,6 @@
 package top.lytree.handler.client;
 
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import top.lytree.protocol.Packet;
@@ -14,6 +15,7 @@ import java.util.Map;
  * 
  * @since 2023-04-08 11:35:08
  */
+@ChannelHandler.Sharable
 public class ClientHandler extends SimpleChannelInboundHandler<Packet> {
 
     /**

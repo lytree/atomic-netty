@@ -3,6 +3,7 @@ package top.lytree.handler;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
+import lombok.extern.slf4j.Slf4j;
 import top.lytree.serialize.PacketCodeC;
 
 /**
@@ -11,6 +12,7 @@ import top.lytree.serialize.PacketCodeC;
  * 
  * @since 2023-03-31 20:17:22
  */
+@Slf4j
 public class SplitHandler extends LengthFieldBasedFrameDecoder {
 
     /**
@@ -19,6 +21,12 @@ public class SplitHandler extends LengthFieldBasedFrameDecoder {
     public SplitHandler() {
         // 最大长度 数据长度偏移量 表示该数据长度的字段字节数
         super(Integer.MAX_VALUE, 7, 4);
+    }
+
+    @Override
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        log.info("断开链接");
+        super.channelInactive(ctx);
     }
 
     @Override
